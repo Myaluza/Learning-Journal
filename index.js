@@ -26,7 +26,15 @@ function renderHomePage() {
                                     Solo Projects projects and meet like-minded peers.</p>
                                 </article>
                                 <article class="blogArticle">
-                                    <img src="images/article1.png">
+                                    <img src="images/article1.png" class="articleImg">
+                                    <time class="articleDate">January 3, 2026</time>
+                                    <h2 class="articleHeading">Blog 2</h2>
+                                    <p class="articleText">After several months of learning in the Full Stack Developer Career Path, 
+                                    I've made the big jump over to the Bootcamp to get expert code reviews of my 
+                                    Solo Projects projects and meet like-minded peers.</p>
+                                </article>
+                                <article class="blogArticle">
+                                    <img src="images/article1.png" class="articleImg">
                                     <time class="articleDate">January 3, 2026</time>
                                     <h2 class="articleHeading">Blog 2</h2>
                                     <p class="articleText">After several months of learning in the Full Stack Developer Career Path, 
@@ -45,10 +53,14 @@ function renderMainArticle() {
                             <a id="about"><p>ABOUT ME</p></a>
                         </nav>
                         <main>
-                            <article>
-                                <time class="articleDate">January 3, 2026</time>
-                                <h2 class="articleHeading">My new journey as a bootcamp student</h2>
-                                <img src="images/main-article.png" class="articleImg">
+                            <article id="mainArticle">
+                                <div class="image-container">
+                                    <img src="images/main-article.png" class="articleImg">
+                                    <div class="text-overlay">
+                                        <time class="articleDate">January 3, 2026</time>
+                                        <h2 class="articleHeading">My new journey as a bootcamp student</h2>
+                                    </div>
+                                </div>
                                 <p class="articleText">I like to think of myself as a lifelong learner. I used to 
                                     spend hours and hours learning, then try to create simple 
                                     projects using what I learned or work new techniques into 
@@ -140,14 +152,11 @@ function renderAboutMePage() {
 
 renderHomePage()
 
-// Listen for clicks anywhere on the page
 document.addEventListener("click", function(e) {
-    // Check if the clicked element (or its parent) has the id "about"
     if (e.target.closest("#about")) {
         renderAboutMePage();
     }
     
-    // You can also add your Home button logic here!
     if (e.target.closest("#home")) {
         renderHomePage();
     }
